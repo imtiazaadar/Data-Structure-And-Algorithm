@@ -25,49 +25,45 @@ public class Fibonacci_Recursion {
 		}
 		System.out.println();
 	}
-	static class FastScanner {
-		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringTokenizer st = new StringTokenizer("");
-
-		String next() {
-			while (!st.hasMoreTokens()) {
-				try {
-					st = new StringTokenizer(br.readLine());
-				} catch (IOException e) {
+	static class FastScanner{
+			BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+			StringTokenizer st = new StringTokenizer("");
+			String next(){
+				while(!st.hasMoreTokens()) {
+					try {
+						st = new StringTokenizer(br.readLine());
+					}
+					catch(IOException e) {
+						e.printStackTrace();
+					}
+				}
+				return st.nextToken();
+			}
+			String nextLine() {
+				String str = "";
+				try{
+					str = br.readLine();
+				}
+				catch(IOException e) {
 					e.printStackTrace();
 				}
+				return str;
 			}
-			return st.nextToken();
-		}
-
-		String nextLine() {
-			String str = "";
-			try {
-				str = br.readLine();
-			} catch (IOException e) {
-				e.printStackTrace();
+			int nextInt() {
+				return Integer.parseInt(next());
 			}
-			return str;
-		}
-
-		int nextInt() {
-			return Integer.parseInt(next());
-		}
-
-		long nextLong() {
-			return Long.parseLong(next());
-		}
-
-		double nextDouble() {
-			return Double.parseDouble(next());
-		}
-
-		int[] readIntArray(int size) {
-			int[] x = new int[size];
-			for (int i = 0; i < x.length; i++) {
-				x[i] = nextInt();
+			long nextLong() {
+				return Long.parseLong(next());
 			}
-			return x;
+			double nextDouble() {
+				return Double.parseDouble(next());
+			}
+			int[] readIntArray(int size) {
+				int[] x = new int[size];
+				for(int i = 0; i < x.length; i++) {
+					x[i] = nextInt();
+				}
+				return x;
+			}
 		}
-	}
 }
