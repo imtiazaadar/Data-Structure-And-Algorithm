@@ -5,7 +5,10 @@ package DataStructure;
  */
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class DFS {
 	private ArrayList<ArrayList<Integer>> adj;
@@ -41,7 +44,7 @@ public class DFS {
 		}
 	}
 	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
+		FastScanner scan = new FastScanner();
 		System.out.println("Enter how many nodes you want to add : ");
 		int nodes = scan.nextInt();
 		DFS obj = new DFS(nodes);
@@ -53,5 +56,46 @@ public class DFS {
 		System.out.println("\n< - DFS - >\n");
 		obj.dfs();
 		System.out.println();
+	}
+	static class FastScanner{
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = new StringTokenizer("");
+		String next(){
+			while(!st.hasMoreTokens()) {
+				try {
+					st = new StringTokenizer(br.readLine());
+				}
+				catch(IOException e) {
+					e.printStackTrace();
+				}
+			}
+			return st.nextToken();
+		}
+		String nextLine() {
+			String str = "";
+			try{
+				str = br.readLine();
+			}
+			catch(IOException e) {
+				e.printStackTrace();
+			}
+			return str;
+		}
+		int nextInt() {
+			return Integer.parseInt(next());
+		}
+		long nextLong() {
+			return Long.parseLong(next());
+		}
+		double nextDouble() {
+			return Double.parseDouble(next());
+		}
+		int[] readIntArray(int size) {
+			int[] x = new int[size];
+			for(int i = 0; i < x.length; i++) {
+				x[i] = nextInt();
+			}
+			return x;
+		}
 	}
 }
