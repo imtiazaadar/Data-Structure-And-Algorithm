@@ -53,17 +53,17 @@ public class Binary_Search_Tree {
 	
 	void Preorder(BST root) {
 		if(root != null) {
+			System.out.print("--> " + root.data);
 			Preorder(root.left);
 			Preorder(root.right);
-			System.out.print("--> " + root.data);
 		}
 	}
 	
 	void Postorder(BST root) {
 		if(root != null) {
-			System.out.print("--> " + root.data);
 			Postorder(root.left);
 			Postorder(root.right);
+			System.out.print("--> " + root.data);
 		}
 	}
 	
