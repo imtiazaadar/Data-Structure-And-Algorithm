@@ -30,7 +30,6 @@ for _ in range(edges):
     print('Add Edge : ', end='')
     source, destination = map(int, input().split())
     g.addEdge(source, destination)
-    #print()
 # 0, 1  0, 2  1, 2  2, 0  2, 3  3, 3
 print('\n##- DFS -##\n')
 g.DFS()
