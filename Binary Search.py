@@ -17,4 +17,7 @@ def binary_search(li, element):
 li = [10, 20, 30, 40, 50, 60, 70]
 element = int(input('Enter element which you want to search : '))
 pos = binary_search(li, element)
-print(f'Element in {pos} position')
+if pos != -1:
+    print(f'Element in {pos} position')
+else:
+    print('Element not found!!!')
